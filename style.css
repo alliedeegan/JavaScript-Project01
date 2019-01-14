@@ -1,0 +1,232 @@
+ ----- SETUP ----- */
+
+html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}
+
+.clearfix:after {visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+
+/*FONTS*/
+/*font-family: 'Rock Salt', cursive;
+font-family: 'Nothing You Could Do', cursive;
+font-family: 'Heebo', sans-serif;*/
+
+
+/* ----- GLOBAL STYLES ----- */
+
+body {
+	background-color: #fff;
+	font-family: 'Heebo', sans-serif;
+	font-weight: 100;
+	font-size: 20px;
+	color: #182C61;
+	text-align: center;
+}
+
+.wrapper {
+	width: 900px;
+	margin: 0  auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+section {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+section.active-page {
+	display: block;
+	opacity: 0;
+	animation: fadeIn 3s ease;
+	animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
+
+.image {
+	margin: 10px 0 0;
+	width: 250px;
+	height: 250px;
+	overflow: hidden;
+	border-radius: 50%;
+	box-shadow: 0 10px 30px transparent;
+	transition: all 0.3s ease;	
+}
+
+.image:hover{
+	box-shadow: 0 10px 30px #2C3A47;
+	transform: translateY(-10px);
+	cursor: pointer;
+}
+
+img {
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+input[type=text] {
+	border: 2px solid #FC427B;
+	border-radius: 5px;
+	padding: 5px 10px;
+	display: block;
+	color: #FC427B;
+}
+
+input[type=submit] {
+	margin: 10px 0 0;
+	padding: 5px 10px;
+	border: 2px solid #FC427B;
+	background: #FC427B;
+	color: #fff;
+	border-radius: 5px;
+	transition: all 0.3s ease; 
+}
+
+input[type=submit]:hover {
+	cursor: pointer;
+	background-color: #fff;
+	color: #FC427B;
+}
+
+.image.image-fixed{
+	box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.image.image-fixed:hover {
+	transform: translateY(0px);
+	cursor: default;
+}
+
+.image-mind:hover {
+	cursor: default;
+	transform: translateY(0px);
+	box-shadow: 0 10px 30px transparent;
+}
+
+
+/* ----- FONTS ----- */
+
+h1 {
+	margin: 0;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 60px;
+    background: -webkit-linear-gradient(270deg, #fff, #3B3B98, #182C61 );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h1 span {
+	font-family: 'Rock Salt', cursive;
+	font-size: 35px;
+	background: #FC427B;
+	-webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+	margin: 15px 0;
+	letter-spacing: 1px;
+	font-size: 30px;
+}
+
+h3 {
+	font-family: 'Nothing You Could Do', cursive;
+	color: #FC427B;
+	font-size: 30px;
+	margin: 25px 0 0;
+}
+
+h4 {
+	font-size: 18px;
+	text-transform: uppercase;
+	margin: 10px 0;
+	color: #FC427B;
+}
+
+h5 {
+	font-family: 'Nothing You Could Do', cursive;
+	color: #FC427B;
+	font-size: 20px;
+	margin: 5px 0;
+}
+
+span.userInput {
+	color: #FC427B;
+	font-family: 'Nothing You Could Do', cursive;
+}
+
+p {
+	margin: 5px 0;
+	font-size: 24px;
+}
+
+
+
+/* ----- START PAGE -----*/
+
+.welcome-page h5 {
+	margin: 20px 0 30px;
+}
+
+
+/* ----- NAME PAGE ----- */
+
+.name-page h3 {
+	font-family: 'Nothing You Could Do', cursive;
+	color: #FC427B;
+	font-size: 30px;
+	margin: 25px 0 0;
+}
+
+
+/* ----- MEDITATION SELECTION PAGE ----- */
+
+.choices {
+	width: 550px;
+	display: flex;
+	justify-content: space-between;
+	margin: 20px 0 0;
+}
+
+.selection-insomnia, 
+.selection-mindfulness {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.line-through {
+	text-decoration: line-through; 
+}
+
+
+/* ----- MEDITATION SLIDES - SPECIFIC ----- */
+
+form.inso4, form.inso7 {
+	margin: 20px 0 0;
+}
+
